@@ -8,34 +8,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Alg_04_515_FindLargestValueInEachTreeRow {
+	private List<Integer> result = new ArrayList<>();
 	public List<Integer> largestValues(AlgTreeNode root) {
-		List<Integer> result = new ArrayList<>();
-		if (root == null) {
-			return result;
-		}
-
-		AlgLinkedListQueue<AlgTreeNode> queue = new AlgLinkedListQueue<>();
-
-		queue.pushBack(root);
-
-		while (!queue.isEmpty()) {
-			int size = queue.size();
-			int max = Integer.MIN_VALUE;
-			for (int i = 0; i < size; i++) {
-				AlgTreeNode node = queue.popFront();
-				max = Math.max(max, node.val);
-				if (node.left != null) {
-					queue.pushBack(node.left);
-				}
-				if (node.right != null) {
-					queue.pushBack(node.right);
-				}
-			}
-			result.add(max);
-		}
+		dfs(root, 0);
 		return result;
 	}
-
+	public void dfs(AlgTreeNode node, int depth) {
+		if (node == null) {
+			return;
+		}
+		if (result.size() == depth) {
+			result.add(node.val);
+		}
+		else {
+			result.set(depth, Math.max(result.get(depth), node.val));
+		}
+		dfs(node.left, depth + 1);
+		dfs(node.right, depth + 1);
+	}
 	public void run() {
 		Integer[] arr = new Integer[]{1, 3, 2, 5, 3, null, 9};
 		System.out.println(largestValues(Util.createTree(arr)));

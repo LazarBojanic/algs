@@ -5,7 +5,7 @@ public class Alg_07_209_MinimumSizeSubarraySum {
 	public int minSubArrayLen(int target, int[] nums) {
 		int left = 0;
 		int sum = 0;
-		int minLen = Integer.MAX_VALUE;
+		int minLen = nums.length + 1;
 
 		for (int right = 0; right < nums.length; right++) {
 			sum += nums[right];
@@ -16,12 +16,21 @@ public class Alg_07_209_MinimumSizeSubarraySum {
 				left++;
 			}
 		}
+		if(minLen > nums.length){
+			minLen = 0;
+		}
 		return minLen;
 	}
 
 	public void run() {
-		int target = 7;
-		int[] nums = {2, 3, 1, 2, 4, 3};
-		System.out.println(minSubArrayLen(target, nums));
+		int target1 = 7;
+		int[] nums1 = {2, 3, 1, 2, 4, 3};
+		int target2 = 4;
+		int[] nums2 = {1, 4, 4};
+		int target3 = 11;
+		int[] nums3 = {1, 1, 1, 1, 1, 1, 1, 1};
+		System.out.println(minSubArrayLen(target1, nums1));
+		System.out.println(minSubArrayLen(target2, nums2));
+		System.out.println(minSubArrayLen(target3, nums3));
 	}
 }
