@@ -1,11 +1,11 @@
 package com.lazar.algs;
 
-import com.lazar.algs.chapter4_binary_search.Alg_09_AggressiveCows;
+import com.lazar.algs.chapter5_hash_maps.Alg_07_36_ValidSudoku;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		Alg_09_AggressiveCows alg = new Alg_09_AggressiveCows();
+		var alg = new Alg_07_36_ValidSudoku();
 		alg.run();
 	}
 }
