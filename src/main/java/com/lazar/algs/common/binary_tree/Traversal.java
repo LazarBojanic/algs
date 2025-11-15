@@ -24,7 +24,9 @@ public class Traversal {
 		}
 	}
 	public void dfsRecursive(AlgTreeNode root) {
-		if (root == null) return;
+		if (root == null) {
+			return;
+		}
 		System.out.print(root.val + " ");
 		dfsRecursive(root.left);
 		dfsRecursive(root.right);
