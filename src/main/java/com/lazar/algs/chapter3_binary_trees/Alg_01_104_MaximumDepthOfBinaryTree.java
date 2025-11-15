@@ -1,5 +1,6 @@
 package com.lazar.algs.chapter3_binary_trees;
 
+import com.lazar.algs.common.Util;
 import com.lazar.algs.common.binary_tree.AlgTreeNode;
 
 public class Alg_01_104_MaximumDepthOfBinaryTree {
@@ -11,5 +12,9 @@ public class Alg_01_104_MaximumDepthOfBinaryTree {
 		int rightDepth = maxDepth(root.right);
 
 		return Math.max(leftDepth, rightDepth) + 1;
+	}
+	public void run(){
+		Integer[] arr = new Integer[] { 3, 9, 20, null, null, 15, 7 };
+		System.out.println(maxDepth(Util.createTree(arr)));
 	}
 }

@@ -1,5 +1,6 @@
 package com.lazar.algs.chapter3_binary_trees;
 
+import com.lazar.algs.common.Util;
 import com.lazar.algs.common.binary_tree.AlgTreeNode;
 
 public class Alg_07_968_BinaryTreeCameras {
@@ -30,5 +31,9 @@ public class Alg_07_968_BinaryTreeCameras {
 		else {
 			return 0;
 		}
+	}
+	public void run(){
+		Integer[] arr = new Integer[] { 0, 0, null, 0, null, 0, null, null, 0 };
+		System.out.println(minCameraCover(Util.createTree(arr)));
 	}
 }

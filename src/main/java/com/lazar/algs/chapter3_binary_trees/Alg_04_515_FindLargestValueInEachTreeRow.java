@@ -1,5 +1,6 @@
 package com.lazar.algs.chapter3_binary_trees;
 
+import com.lazar.algs.common.Util;
 import com.lazar.algs.common.binary_tree.AlgTreeNode;
 import com.lazar.algs.common.queue.AlgDoublyLinkedListDequeue;
 import com.lazar.algs.common.queue.AlgLinkedListQueue;
@@ -34,5 +35,9 @@ public class Alg_04_515_FindLargestValueInEachTreeRow {
 			result.add(max);
 		}
 		return result;
+	}
+	public void run(){
+		Integer[] arr = new Integer[] { 1, 3, 2, 5, 3, null, 9 };
+		System.out.println(largestValues(Util.createTree(arr)));
 	}
 }

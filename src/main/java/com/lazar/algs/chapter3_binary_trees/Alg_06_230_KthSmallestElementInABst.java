@@ -1,5 +1,6 @@
 package com.lazar.algs.chapter3_binary_trees;
 
+import com.lazar.algs.common.Util;
 import com.lazar.algs.common.binary_tree.AlgTreeNode;
 
 public class Alg_06_230_KthSmallestElementInABst {
@@ -23,5 +24,10 @@ public class Alg_06_230_KthSmallestElementInABst {
 			return;
 		}
 		inOrder(node.right);
+	}
+	public void run(){
+		int k = 3;
+		Integer[] arr = new Integer[] { 5, 3, 6, 2, 4, null, null, 1 };
+		System.out.println(kthSmallest(Util.createTree(arr), k));
 	}
 }

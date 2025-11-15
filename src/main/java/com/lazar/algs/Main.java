@@ -9,7 +9,7 @@ import com.lazar.algs.chapter5_hash_maps.*;
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		Alg_08_FirstNonRepeatingCharacterInAStream alg = new Alg_08_FirstNonRepeatingCharacterInAStream();
+		Alg_08_236_LowestCommonAncestorOfABinaryTree alg = new Alg_08_236_LowestCommonAncestorOfABinaryTree();
 		alg.run();
 	}
 }

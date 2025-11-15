@@ -1,5 +1,6 @@
 package com.lazar.algs.chapter3_binary_trees;
 
+import com.lazar.algs.common.Util;
 import com.lazar.algs.common.binary_tree.AlgTreeNode;
 
 public class Alg_03_129_SumRootToLeafNumbers {
@@ -16,5 +17,9 @@ public class Alg_03_129_SumRootToLeafNumbers {
 			return currentSum;
 		}
 		return helper(node.left, currentSum) + helper(node.right, currentSum);
+	}
+	public void run(){
+		Integer[] arr = new Integer[] {4, 9, 0, 5, 1};
+		System.out.println(sumNumbers(Util.createTree(arr)));
 	}
 }
