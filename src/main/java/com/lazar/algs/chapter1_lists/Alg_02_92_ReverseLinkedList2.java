@@ -10,16 +10,16 @@ public class Alg_02_92_ReverseLinkedList2 {
 		}
 		AlgListNode<T> dummy = new AlgListNode<>();
 		dummy.next = head;
-		AlgListNode<T> pre = dummy;
+		AlgListNode<T> prev = dummy;
 		for (int i = 0; i < left - 1; i++) {
-			pre = pre.next;
+			prev = prev.next;
 		}
-		AlgListNode<T> start = pre.next;
+		AlgListNode<T> start = prev.next;
 		AlgListNode<T> then = start.next;
 		for (int i = 0; i < right - left; i++) {
 			start.next = then.next;
-			then.next = pre.next;
-			pre.next = then;
+			then.next = prev.next;
+			prev.next = then;
 			then = start.next;
 		}
 		return dummy.next;
