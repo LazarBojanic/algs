@@ -1,4 +1,4 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.stack;
 
 public class AlgStackNode<T> {
 	public T val;

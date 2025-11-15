@@ -1,4 +1,6 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.queue;
+
+import static com.lazar.algs.common.Util.MAX_CAPACITY;
 
 public class AlgArrayQueue<T> {
 	private T[] arr;
@@ -18,7 +20,7 @@ public class AlgArrayQueue<T> {
 
 	@SuppressWarnings("unchecked")
 	public AlgArrayQueue() {
-		this.capacity = Integer.MAX_VALUE;
+		this.capacity = MAX_CAPACITY;
 		arr = (T[]) new Object[capacity];
 		front = 0;
 		rear = -1;
@@ -37,7 +39,7 @@ public class AlgArrayQueue<T> {
 		return size;
 	}
 
-	public void pushLast(T value) {
+	public void pushBack(T value) {
 		if (isFull()) {
 			throw new RuntimeException("Queue overflow");
 		}
@@ -46,7 +48,7 @@ public class AlgArrayQueue<T> {
 		size++;
 	}
 
-	public T popFirst() {
+	public T popFront() {
 		if (isEmpty()) {
 			throw new RuntimeException("Queue underflow");
 		}
@@ -56,16 +58,13 @@ public class AlgArrayQueue<T> {
 		return val;
 	}
 
-	public T peekFirst() {
+	public T peekFront() {
 		if (isEmpty()) {
 			throw new RuntimeException("Queue is empty");
 		}
 		return arr[front];
 	}
 
-	public T[] getArr() {
-		return arr;
-	}
 
 	public int getCapacity() {
 		return capacity;

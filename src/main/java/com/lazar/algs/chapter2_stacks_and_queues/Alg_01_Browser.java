@@ -1,6 +1,6 @@
 package com.lazar.algs.chapter2_stacks_and_queues;
 
-import com.lazar.algs.common.AlgArrayStack;
+import com.lazar.algs.common.stack.AlgArrayStack;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,10 +9,10 @@ public class Alg_01_Browser {
 
 	public void run() throws Exception {
 		String url = "";
-		AlgArrayStack<String> stack = new AlgArrayStack<>(100);
+		AlgArrayStack<String> stack = new AlgArrayStack<>();
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
 		do {
-			InputStreamReader isr = new InputStreamReader(System.in);
-			BufferedReader br = new BufferedReader(isr);
 			url = br.readLine();
 			if (url.equals("back")) {
 				if (!stack.isEmpty()) {
@@ -31,6 +31,5 @@ public class Alg_01_Browser {
 			}
 		}
 		while (!url.equals("quit"));
-
 	}
 }

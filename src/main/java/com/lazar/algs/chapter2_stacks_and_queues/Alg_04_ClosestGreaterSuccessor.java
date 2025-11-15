@@ -1,22 +1,31 @@
 package com.lazar.algs.chapter2_stacks_and_queues;
 
-import com.lazar.algs.common.AlgArrayStack;
+import com.lazar.algs.common.stack.AlgArrayStack;
+
+import java.util.Arrays;
 
 public class Alg_04_ClosestGreaterSuccessor {
 	public int[] closestGreaterSuccessors(int[] arr) {
-		AlgArrayStack<Integer> stack = new AlgArrayStack<>(arr.length);
-		for (int i = arr.length - 1; i >= 0; i--) {
-			while (!stack.isEmpty() && arr[stack.peek()] < arr[i]) {
+		int n = arr.length;
+		int[] result = new int[n];
+		AlgArrayStack<Integer> stack = new AlgArrayStack<>(n);
+		for (int i = n - 1; i >= 0; i--) {
+			while (!stack.isEmpty() && stack.peek() <= arr[i]) {
 				stack.pop();
 			}
 			if (stack.isEmpty()) {
-				arr[i] = -1;
+				result[i] = -1;
 			}
 			else {
-				arr[i] = stack.peek();
+				result[i] = stack.peek();
 			}
-			stack.push(i);
+			stack.push(arr[i]);
 		}
-		return arr;
+		return result;
+	}
+	public void run() {
+		int[] arr = {6, 2, 11, 2, 7, 3, 15};
+		int[] result = closestGreaterSuccessors(arr);
+		System.out.println(Arrays.toString(result));
 	}
 }

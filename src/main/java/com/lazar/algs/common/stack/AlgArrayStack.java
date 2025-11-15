@@ -1,4 +1,6 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.stack;
+
+import static com.lazar.algs.common.Util.MAX_CAPACITY;
 
 public class AlgArrayStack<T> {
 	private T[] stack;
@@ -14,7 +16,7 @@ public class AlgArrayStack<T> {
 
 	@SuppressWarnings("unchecked")
 	public AlgArrayStack() {
-		capacity = Integer.MAX_VALUE;
+		capacity = MAX_CAPACITY;
 		stack = (T[]) new Object[capacity];
 		top = -1;
 	}
@@ -50,10 +52,6 @@ public class AlgArrayStack<T> {
 
 	public int size() {
 		return top + 1;
-	}
-
-	public T[] getArr() {
-		return stack;
 	}
 
 	public int getCapacity() {

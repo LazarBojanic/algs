@@ -1,4 +1,4 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.stack;
 
 public class AlgLinkedListStack<T> {
 

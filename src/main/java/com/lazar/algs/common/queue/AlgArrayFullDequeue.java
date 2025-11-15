@@ -1,45 +1,49 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.queue;
 
-public class AlgArrayFullQueue<T> {
+
+import static com.lazar.algs.common.Util.MAX_CAPACITY;
+
+public class AlgArrayFullDequeue<T> {
 
 	private AlgArrayDequeue<T> left;
 	private AlgArrayDequeue<T> right;
 
-	public AlgArrayFullQueue(int capacity) {
+	public AlgArrayFullDequeue(int capacity) {
+		int half = (capacity + 1) / 2;
+		left = new AlgArrayDequeue<>(half);
+		right = new AlgArrayDequeue<>(capacity - half);
+	}
+	public AlgArrayFullDequeue() {
+		int capacity = MAX_CAPACITY;
 		int half = (capacity + 1) / 2;
 		left = new AlgArrayDequeue<>(half);
 		right = new AlgArrayDequeue<>(capacity - half);
 	}
 
-	public AlgArrayFullQueue() {
-		left = new AlgArrayDequeue<>();
-		right = new AlgArrayDequeue<>();
-	}
-
 	private void rebalance() {
 		if (left.size() > right.size() + 1) {
-			right.pushFirst(left.popLast());
+			right.pushFront(left.popBack());
 		}
 		else if (left.size() < right.size()) {
-			left.pushLast(right.popFirst());
+			left.pushBack(right.popFront());
 		}
 	}
 
 	public void pushFront(T val) {
-		left.pushFirst(val);
+		left.pushFront(val);
 		rebalance();
 	}
 
 	public void pushMiddle(T val) {
 		if (left.size() > right.size()) {
-			right.pushFirst(left.popLast());
+			right.pushFront(left.popBack());
 		}
-		left.pushLast(val);
+		left.pushBack(val);
 		rebalance();
 	}
 
 	public void pushBack(T val) {
-		right.pushLast(val);
+		right.pushBack(val);
 		rebalance();
 	}
 
@@ -48,7 +52,7 @@ public class AlgArrayFullQueue<T> {
 			return null;
 		}
 		else {
-			T val = left.popFirst();
+			T val = left.popFront();
 			rebalance();
 			return val;
 		}
@@ -59,7 +63,7 @@ public class AlgArrayFullQueue<T> {
 			return null;
 		}
 		else {
-			T val = left.popLast();
+			T val = left.popBack();
 			rebalance();
 			return val;
 		}
@@ -72,10 +76,10 @@ public class AlgArrayFullQueue<T> {
 		else {
 			T val;
 			if (!right.isEmpty()) {
-				val = right.popLast();
+				val = right.popBack();
 			}
 			else {
-				val = left.popLast();
+				val = left.popBack();
 			}
 			rebalance();
 			return val;
@@ -95,7 +99,7 @@ public class AlgArrayFullQueue<T> {
 			return null;
 		}
 		else {
-			return left.peekFirst();
+			return left.peekFront();
 		}
 	}
 
@@ -104,7 +108,7 @@ public class AlgArrayFullQueue<T> {
 			return null;
 		}
 		else {
-			return left.peekLast();
+			return left.peekBack();
 		}
 	}
 
@@ -114,11 +118,14 @@ public class AlgArrayFullQueue<T> {
 		}
 		else {
 			if (!right.isEmpty()) {
-				return right.peekLast();
+				return right.peekBack();
 			}
 			else {
-				return left.peekLast();
+				return left.peekBack();
 			}
 		}
+	}
+	public int getCapacity() {
+		return left.getCapacity() + right.getCapacity();
 	}
 }

@@ -1,11 +1,11 @@
 package com.lazar.algs.chapter1_lists;
 
-import com.lazar.algs.common.AlgListNode;
+import com.lazar.algs.common.linked_list.AlgListNode;
 import com.lazar.algs.common.Util;
 
 public class Alg_08_21_MergeTwoSortedLists {
 	public <T> AlgListNode<T> mergeTwoLists(AlgListNode<T> l1, AlgListNode<T> l2) {
-		AlgListNode<T> prehead = new AlgListNode<T>();
+		AlgListNode<T> prehead = new AlgListNode<>();
 		AlgListNode<T> prev = prehead;
 		while (l1 != null && l2 != null) {
 			if ((Integer) l1.val <= (Integer) l2.val) {

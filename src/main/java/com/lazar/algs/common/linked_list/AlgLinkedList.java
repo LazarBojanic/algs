@@ -1,4 +1,4 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.linked_list;
 
 public class AlgLinkedList<T> {
 	private AlgListNode<T> head;

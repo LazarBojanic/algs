@@ -1,16 +1,15 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.queue;
 
 public class AlgLinkedListQueue<T> {
 	private AlgQueueNode<T> head;
 	private AlgQueueNode<T> tail;
 	private int size;
 
-
 	public AlgLinkedListQueue() {
-		head = tail = null;
+		head = null;
+		tail = null;
 		size = 0;
 	}
-
 
 	public boolean isEmpty() {
 		return size == 0;
@@ -21,20 +20,21 @@ public class AlgLinkedListQueue<T> {
 	}
 
 
-	public void pushLast(T value) {
+	public void pushBack(T value) {
 		AlgQueueNode<T> node = new AlgQueueNode<>(value);
+
 		if (isEmpty()) {
-			head = tail = node;
+			head = node;
 		}
 		else {
 			tail.next = node;
-			tail = node;
 		}
+		tail = node;
 		size++;
 	}
 
 
-	public T popFirst() {
+	public T popFront() {
 		if (isEmpty()) {
 			throw new RuntimeException("Queue underflow");
 		}
@@ -48,7 +48,7 @@ public class AlgLinkedListQueue<T> {
 	}
 
 
-	public T peekFirst() {
+	public T peekFront() {
 		if (isEmpty()) {
 			throw new RuntimeException("Queue is empty");
 		}

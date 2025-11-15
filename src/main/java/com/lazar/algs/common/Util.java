@@ -1,6 +1,9 @@
 package com.lazar.algs.common;
 
+import com.lazar.algs.common.linked_list.AlgListNode;
+
 public class Util {
+	public static Integer MAX_CAPACITY = 100000;
 	public static <T> void printList(AlgListNode<T> head) {
 		while (head != null) {
 			System.out.print(head.val + "->");

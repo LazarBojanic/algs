@@ -1,13 +1,18 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.stack;
 
-public class AlgLinkedListMaxStack<T extends Number> {
+public class AlgArrayMaxStack<T extends Number> {
 
-	private AlgLinkedListStack<T> stack;
-	private AlgLinkedListStack<T> maxStack;
+	private AlgArrayStack<T> stack;
+	private AlgArrayStack<T> maxStack;
 
-	public AlgLinkedListMaxStack() {
-		stack = new AlgLinkedListStack<>();
-		maxStack = new AlgLinkedListStack<>();
+	public AlgArrayMaxStack(int capacity) {
+		stack = new AlgArrayStack<>(capacity);
+		maxStack = new AlgArrayStack<>(capacity);
+	}
+
+	public AlgArrayMaxStack() {
+		stack = new AlgArrayStack<>();
+		maxStack = new AlgArrayStack<>();
 	}
 
 	public void push(T value) {
@@ -50,6 +55,6 @@ public class AlgLinkedListMaxStack<T extends Number> {
 	}
 
 	public int size() {
-		return stack.getSize();
+		return stack.size();
 	}
 }

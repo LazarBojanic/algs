@@ -1,11 +1,11 @@
 package com.lazar.algs.chapter2_stacks_and_queues;
 
-import com.lazar.algs.common.AlgArrayStack;
+import com.lazar.algs.common.stack.AlgArrayStack;
 
 public class Alg_02_Parentheses {
 	public boolean isValid(String s) {
 		boolean result = true;
-		AlgArrayStack<Character> stack = new AlgArrayStack<>(100);
+		AlgArrayStack<Character> stack = new AlgArrayStack<>();
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
 			if (c == '(' || c == '[' || c == '{') {

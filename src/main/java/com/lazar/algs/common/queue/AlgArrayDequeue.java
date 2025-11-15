@@ -1,9 +1,11 @@
-package com.lazar.algs.common;
+package com.lazar.algs.common.queue;
+
+import static com.lazar.algs.common.Util.MAX_CAPACITY;
 
 public class AlgArrayDequeue<T> {
 	private T[] arr;
 	private int front;
-	private int rear;
+	private int back;
 	private int size;
 	private int capacity;
 
@@ -12,16 +14,16 @@ public class AlgArrayDequeue<T> {
 		this.capacity = capacity;
 		arr = (T[]) new Object[capacity];
 		front = 0;
-		rear = -1;
+		back = -1;
 		size = 0;
 	}
 
 	@SuppressWarnings("unchecked")
 	public AlgArrayDequeue() {
-		this.capacity = Integer.MAX_VALUE;
+		this.capacity = MAX_CAPACITY;
 		arr = (T[]) new Object[capacity];
 		front = 0;
-		rear = -1;
+		back = -1;
 		size = 0;
 	}
 
@@ -37,7 +39,7 @@ public class AlgArrayDequeue<T> {
 		return size;
 	}
 
-	public void pushFirst(T value) {
+	public void pushFront(T value) {
 		if (isFull()) {
 			throw new RuntimeException("Deque overflow");
 		}
@@ -45,22 +47,20 @@ public class AlgArrayDequeue<T> {
 		arr[front] = value;
 		size++;
 		if (size == 1) {
-			rear = front;
+			back = front;
 		}
 	}
 
-
-	public void pushLast(T value) {
+	public void pushBack(T value) {
 		if (isFull()) {
 			throw new RuntimeException("Deque overflow");
 		}
-		rear = (rear + 1) % capacity;
-		arr[rear] = value;
+		back = (back + 1) % capacity;
+		arr[back] = value;
 		size++;
 	}
 
-
-	public T popFirst() {
+	public T popFront() {
 		if (isEmpty()) {
 			throw new RuntimeException("Deque underflow");
 		}
@@ -70,35 +70,28 @@ public class AlgArrayDequeue<T> {
 		return val;
 	}
 
-
-	public T popLast() {
+	public T popBack() {
 		if (isEmpty()) {
 			throw new RuntimeException("Deque underflow");
 		}
-		T val = arr[rear];
-		rear = (rear - 1 + capacity) % capacity;
+		T val = arr[back];
+		back = (back - 1 + capacity) % capacity;
 		size--;
 		return val;
 	}
 
-
-	public T peekFirst() {
+	public T peekFront() {
 		if (isEmpty()) {
 			throw new RuntimeException("Deque is empty");
 		}
 		return arr[front];
 	}
 
-
-	public T peekLast() {
+	public T peekBack() {
 		if (isEmpty()) {
 			throw new RuntimeException("Deque is empty");
 		}
-		return arr[rear];
-	}
-
-	public T[] getArr() {
-		return arr;
+		return arr[back];
 	}
 
 	public int getCapacity() {

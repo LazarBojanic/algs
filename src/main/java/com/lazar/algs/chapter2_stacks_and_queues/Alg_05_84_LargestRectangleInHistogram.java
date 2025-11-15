@@ -1,6 +1,6 @@
 package com.lazar.algs.chapter2_stacks_and_queues;
 
-import com.lazar.algs.common.AlgArrayStack;
+import com.lazar.algs.common.stack.AlgArrayStack;
 
 public class Alg_05_84_LargestRectangleInHistogram {
 
@@ -31,5 +31,11 @@ public class Alg_05_84_LargestRectangleInHistogram {
 			stack.push(right);
 		}
 		return maxArea;
+	}
+	public void run(){
+		int[] heights = new int[]{2, 1, 5, 6, 2, 3};
+		System.out.println(largestRectangleArea(heights));
+		heights = new int[]{3, 7, 4, 6, 5, 8};
+		System.out.println(largestRectangleArea(heights));
 	}
 }
