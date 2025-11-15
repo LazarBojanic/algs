@@ -4,6 +4,7 @@ public class AlgLinkedListStack<T> {
 
 	private AlgStackNode<T> top;
 	private int size;
+
 	public AlgLinkedListStack() {
 		this.top = null;
 		this.size = 0;
@@ -25,6 +26,7 @@ public class AlgLinkedListStack<T> {
 		size--;
 		return value;
 	}
+
 	public int getSize() {
 		return size;
 	}

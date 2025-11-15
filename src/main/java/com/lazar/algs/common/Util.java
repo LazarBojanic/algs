@@ -1,13 +1,14 @@
 package com.lazar.algs.common;
 
 public class Util {
-    public static <T> void printList(AlgListNode<T> head) {
-        while (head != null) {
-            System.out.print(head.val + "->");
-            head = head.next;
-        }
-        System.out.println("null");
-    }
+	public static <T> void printList(AlgListNode<T> head) {
+		while (head != null) {
+			System.out.print(head.val + "->");
+			head = head.next;
+		}
+		System.out.println("null");
+	}
+
 	@SafeVarargs
 	public static <T> AlgListNode<T> createLinkedList(T... values) {
 		if (values == null || values.length == 0) {

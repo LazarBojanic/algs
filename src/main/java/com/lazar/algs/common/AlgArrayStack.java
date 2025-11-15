@@ -12,6 +12,13 @@ public class AlgArrayStack<T> {
 		top = -1;
 	}
 
+	@SuppressWarnings("unchecked")
+	public AlgArrayStack() {
+		capacity = Integer.MAX_VALUE;
+		stack = (T[]) new Object[capacity];
+		top = -1;
+	}
+
 	public void push(T value) {
 		if (isFull()) {
 			throw new RuntimeException("Stack overflow");
@@ -43,5 +50,13 @@ public class AlgArrayStack<T> {
 
 	public int size() {
 		return top + 1;
+	}
+
+	public T[] getArr() {
+		return stack;
+	}
+
+	public int getCapacity() {
+		return capacity;
 	}
 }

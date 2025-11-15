@@ -8,10 +8,12 @@ public class AlgStackNode<T> {
 		this.val = null;
 		this.next = null;
 	}
+
 	public AlgStackNode(T val) {
 		this.val = val;
 		this.next = null;
 	}
+
 	public AlgStackNode(T val, AlgStackNode<T> next) {
 		this.val = val;
 		this.next = next;
