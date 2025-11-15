@@ -16,10 +16,10 @@ public class Alg_08_236_LowestCommonAncestorOfABinaryTree {
 		if (left != null && right != null) {
 			return root;
 		}
-		if (left != null){
+		if (left != null) {
 			return left;
 		}
-		else{
+		else {
 			return right;
 		}
 	}

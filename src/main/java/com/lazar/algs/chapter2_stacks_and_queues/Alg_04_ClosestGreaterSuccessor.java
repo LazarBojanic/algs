@@ -23,6 +23,7 @@ public class Alg_04_ClosestGreaterSuccessor {
 		}
 		return result;
 	}
+
 	public void run() {
 		int[] arr = {6, 2, 11, 2, 7, 3, 15};
 		int[] result = closestGreaterSuccessors(arr);

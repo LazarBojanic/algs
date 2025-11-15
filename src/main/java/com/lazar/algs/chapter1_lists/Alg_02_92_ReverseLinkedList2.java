@@ -1,7 +1,7 @@
 package com.lazar.algs.chapter1_lists;
 
-import com.lazar.algs.common.linked_list.AlgListNode;
 import com.lazar.algs.common.Util;
+import com.lazar.algs.common.linked_list.AlgListNode;
 
 public class Alg_02_92_ReverseLinkedList2 {
 	public <T> AlgListNode<T> reverseBetween(AlgListNode<T> head, int left, int right) {

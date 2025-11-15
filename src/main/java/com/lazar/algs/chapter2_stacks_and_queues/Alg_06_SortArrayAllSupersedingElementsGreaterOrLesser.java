@@ -10,7 +10,8 @@ public class Alg_06_SortArrayAllSupersedingElementsGreaterOrLesser {
 		for (int element : array) {
 			if (dequeue.isEmpty() || element >= dequeue.peekBack()) {
 				dequeue.pushBack(element);
-			} else {
+			}
+			else {
 				dequeue.pushFront(element);
 			}
 		}

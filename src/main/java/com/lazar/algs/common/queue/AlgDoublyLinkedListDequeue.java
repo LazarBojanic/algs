@@ -23,7 +23,8 @@ public class AlgDoublyLinkedListDequeue<T> {
 		AlgDequeueNode<T> node = new AlgDequeueNode<>(value, head, null);
 		if (isEmpty()) {
 			tail = node;
-		} else {
+		}
+		else {
 			head.prev = node;
 		}
 		head = node;
@@ -34,7 +35,8 @@ public class AlgDoublyLinkedListDequeue<T> {
 		AlgDequeueNode<T> node = new AlgDequeueNode<>(value, null, tail);
 		if (isEmpty()) {
 			head = node;
-		} else {
+		}
+		else {
 			tail.next = node;
 		}
 		tail = node;
@@ -49,7 +51,8 @@ public class AlgDoublyLinkedListDequeue<T> {
 		head = head.next;
 		if (head != null) {
 			head.prev = null;
-		} else {
+		}
+		else {
 			tail = null;
 		}
 		size--;
@@ -64,7 +67,8 @@ public class AlgDoublyLinkedListDequeue<T> {
 		tail = tail.prev;
 		if (tail != null) {
 			tail.next = null;
-		} else {
+		}
+		else {
 			head = null;
 		}
 		size--;

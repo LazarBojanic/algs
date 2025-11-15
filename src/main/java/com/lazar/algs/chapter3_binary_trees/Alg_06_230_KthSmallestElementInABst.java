@@ -25,9 +25,10 @@ public class Alg_06_230_KthSmallestElementInABst {
 		}
 		inOrder(node.right);
 	}
-	public void run(){
+
+	public void run() {
 		int k = 3;
-		Integer[] arr = new Integer[] { 5, 3, 6, 2, 4, null, null, 1 };
+		Integer[] arr = new Integer[]{5, 3, 6, 2, 4, null, null, 1};
 		System.out.println(kthSmallest(Util.createTree(arr), k));
 	}
 }

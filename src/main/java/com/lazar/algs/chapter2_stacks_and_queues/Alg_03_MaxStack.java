@@ -4,7 +4,7 @@ import com.lazar.algs.common.stack.AlgLinkedListMaxStack;
 
 public class Alg_03_MaxStack {
 
-	public void run(){
+	public void run() {
 		AlgLinkedListMaxStack<Integer> stack = new AlgLinkedListMaxStack<>();
 		stack.push(1);
 		stack.push(4);

@@ -22,6 +22,7 @@ public class Alg_08_FirstNonRepeatingCharacterInAStream {
 		}
 		return sb.toString();
 	}
+
 	public void run() {
 		System.out.println(firstNonRepeating("abacdeff"));
 		System.out.println(firstNonRepeating("aabbcc"));

@@ -13,8 +13,9 @@ public class Alg_01_104_MaximumDepthOfBinaryTree {
 
 		return Math.max(leftDepth, rightDepth) + 1;
 	}
-	public void run(){
-		Integer[] arr = new Integer[] { 3, 9, 20, null, null, 15, 7 };
+
+	public void run() {
+		Integer[] arr = new Integer[]{3, 9, 20, null, null, 15, 7};
 		System.out.println(maxDepth(Util.createTree(arr)));
 	}
 }

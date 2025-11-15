@@ -1,7 +1,7 @@
 package com.lazar.algs.chapter1_lists;
 
-import com.lazar.algs.common.linked_list.AlgListNode;
 import com.lazar.algs.common.Util;
+import com.lazar.algs.common.linked_list.AlgListNode;
 
 public class Alg_05_82_RemoveDuplicatesFromSortedList2 {
 	public <T> AlgListNode<T> deleteDuplicates(AlgListNode<T> head) {

@@ -1,7 +1,7 @@
 package com.lazar.algs.chapter1_lists;
 
-import com.lazar.algs.common.linked_list.AlgListNode;
 import com.lazar.algs.common.Util;
+import com.lazar.algs.common.linked_list.AlgListNode;
 
 public class Alg_09_86_PartitionList {
 	public <T> AlgListNode<T> partition(AlgListNode<T> head, int x) {

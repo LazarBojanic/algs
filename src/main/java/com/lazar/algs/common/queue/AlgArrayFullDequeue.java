@@ -13,6 +13,7 @@ public class AlgArrayFullDequeue<T> {
 		left = new AlgArrayDequeue<>(half);
 		right = new AlgArrayDequeue<>(capacity - half);
 	}
+
 	public AlgArrayFullDequeue() {
 		int capacity = MAX_CAPACITY;
 		int half = (capacity + 1) / 2;
@@ -125,6 +126,7 @@ public class AlgArrayFullDequeue<T> {
 			}
 		}
 	}
+
 	public int getCapacity() {
 		return left.getCapacity() + right.getCapacity();
 	}

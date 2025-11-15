@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Util {
 	public static Integer MAX_CAPACITY = 100000;
+
 	public static <T> void printList(AlgListNode<T> head) {
 		while (head != null) {
 			System.out.print(head.val + "->");
@@ -30,6 +31,7 @@ public class Util {
 		}
 		return head;
 	}
+
 	public static AlgTreeNode createTree(Integer[] arr) {
 		if (arr == null || arr.length == 0 || arr[0] == null) {
 			return null;
@@ -41,7 +43,7 @@ public class Util {
 		while (i < arr.length) {
 			AlgTreeNode current = queue.popFront();
 			if (arr[i] != null) {
-				current.left = new AlgTreeNode(arr[i])  ;
+				current.left = new AlgTreeNode(arr[i]);
 				queue.pushBack(current.left);
 			}
 			i++;
@@ -53,6 +55,7 @@ public class Util {
 		}
 		return root;
 	}
+
 	public static List<Integer> toLevelOrderList(AlgTreeNode root) {
 		List<Integer> result = new ArrayList<>();
 		if (root == null) {
@@ -68,7 +71,8 @@ public class Util {
 				result.add(node.val);
 				queue.pushBack(node.left);
 				queue.pushBack(node.right);
-			} else {
+			}
+			else {
 				result.add(null);
 			}
 		}

@@ -25,8 +25,9 @@ public class Alg_02_543_DiameterOfBinaryTree {
 
 		return Math.max(leftDepth, rightDepth) + 1;
 	}
-	public void run(){
-		Integer[] arr = new Integer[] { 1, 2, 3, 4, 5 };
+
+	public void run() {
+		Integer[] arr = new Integer[]{1, 2, 3, 4, 5};
 		System.out.println(diameterOfBinaryTree(Util.createTree(arr)));
 	}
 }

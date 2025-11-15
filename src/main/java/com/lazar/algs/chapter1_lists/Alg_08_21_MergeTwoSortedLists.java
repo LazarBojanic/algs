@@ -1,7 +1,7 @@
 package com.lazar.algs.chapter1_lists;
 
-import com.lazar.algs.common.linked_list.AlgListNode;
 import com.lazar.algs.common.Util;
+import com.lazar.algs.common.linked_list.AlgListNode;
 
 public class Alg_08_21_MergeTwoSortedLists {
 	public <T> AlgListNode<T> mergeTwoLists(AlgListNode<T> l1, AlgListNode<T> l2) {

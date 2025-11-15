@@ -32,8 +32,9 @@ public class Alg_07_968_BinaryTreeCameras {
 			return 0;
 		}
 	}
-	public void run(){
-		Integer[] arr = new Integer[] { 0, 0, null, 0, null, 0, null, null, 0 };
+
+	public void run() {
+		Integer[] arr = new Integer[]{0, 0, null, 0, null, 0, null, null, 0};
 		System.out.println(minCameraCover(Util.createTree(arr)));
 	}
 }

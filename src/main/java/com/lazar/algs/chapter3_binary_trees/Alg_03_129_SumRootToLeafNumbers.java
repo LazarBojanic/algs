@@ -18,8 +18,9 @@ public class Alg_03_129_SumRootToLeafNumbers {
 		}
 		return helper(node.left, currentSum) + helper(node.right, currentSum);
 	}
-	public void run(){
-		Integer[] arr = new Integer[] {4, 9, 0, 5, 1};
+
+	public void run() {
+		Integer[] arr = new Integer[]{4, 9, 0, 5, 1};
 		System.out.println(sumNumbers(Util.createTree(arr)));
 	}
 }

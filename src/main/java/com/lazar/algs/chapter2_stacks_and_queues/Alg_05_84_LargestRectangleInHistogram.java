@@ -32,7 +32,8 @@ public class Alg_05_84_LargestRectangleInHistogram {
 		}
 		return maxArea;
 	}
-	public void run(){
+
+	public void run() {
 		int[] heights = new int[]{2, 1, 5, 6, 2, 3};
 		System.out.println(largestRectangleArea(heights));
 		heights = new int[]{3, 7, 4, 6, 5, 8};

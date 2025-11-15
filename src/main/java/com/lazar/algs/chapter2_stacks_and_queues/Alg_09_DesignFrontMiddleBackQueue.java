@@ -1,10 +1,9 @@
 package com.lazar.algs.chapter2_stacks_and_queues;
 
 import com.lazar.algs.common.queue.AlgArrayFullDequeue;
-import com.lazar.algs.common.queue.AlgDoublyLinkedListFullDequeue;
 
 public class Alg_09_DesignFrontMiddleBackQueue {
-	public void run(){
+	public void run() {
 		AlgArrayFullDequeue<Integer> fullDequeue = new AlgArrayFullDequeue<>();
 		fullDequeue.pushBack(2);
 		fullDequeue.pushFront(1);
