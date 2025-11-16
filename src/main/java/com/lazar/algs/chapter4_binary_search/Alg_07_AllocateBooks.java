@@ -2,7 +2,9 @@ package com.lazar.algs.chapter4_binary_search;
 
 public class Alg_07_AllocateBooks {
 	public int books(int[] A, int B) {
-		if (B > A.length) return -1;
+		if (B > A.length) {
+			return -1;
+		}
 
 		int left = 0, right = 0;
 		for (int pages : A) {
@@ -32,7 +34,9 @@ public class Alg_07_AllocateBooks {
 		int sum = 0;
 
 		for (int pages : A) {
-			if (pages > maxPages) return false;
+			if (pages > maxPages) {
+				return false;
+			}
 			if (sum + pages > maxPages) {
 				students++;
 				sum = pages;

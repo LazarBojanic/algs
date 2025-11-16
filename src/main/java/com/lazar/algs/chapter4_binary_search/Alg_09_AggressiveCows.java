@@ -32,7 +32,9 @@ public class Alg_09_AggressiveCows {
 			if (stalls[i] - lastPos >= minDist) {
 				count++;
 				lastPos = stalls[i];
-				if (count == C) return true;
+				if (count == C) {
+					return true;
+				}
 			}
 		}
 
