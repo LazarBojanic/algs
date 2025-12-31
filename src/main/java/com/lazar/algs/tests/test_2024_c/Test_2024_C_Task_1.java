@@ -22,12 +22,12 @@ public class Test_2024_C_Task_1 {
 						left++;
 						cntL++;
 					}
-					int cntR = 0;
+					int cntr = 0;
 					while (left < right && a[right] == rv) {
 						right--;
-						cntR++;
+						cntr++;
 					}
-					count += cntL * cntR;
+					count += cntL * cntr;
 				}
 				else if (sum < 0) {
 					left++;
