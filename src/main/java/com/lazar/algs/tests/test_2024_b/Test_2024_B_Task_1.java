@@ -5,23 +5,23 @@ Time Complexity: O(N + K) - each attack is constant, plus counting ships
 Space Complexity: O(1) - in-place, no extra data structures
 */
 public class Test_2024_B_Task_1 {
-	public int countSunkenShips(int[] ships, int K) {
-		int N = ships.length;
+	public int countSunkenShips(int[] ships, int k) {
+		int n = ships.length;
 		int left = 0;
-		int right = N - 1;
+		int right = n - 1;
 
-		while (K > 0 && left <= right) {
+		while (k > 0 && left <= right) {
 			if (ships[left] > 0) {
 				ships[left]--;
-				K--;
+				k--;
 			}
-			if (K == 0) {
+			if (k == 0) {
 				break;
 			}
 
 			if (ships[right] > 0) {
 				ships[right]--;
-				K--;
+				k--;
 			}
 
 			while (left <= right && ships[left] == 0){
@@ -33,8 +33,10 @@ public class Test_2024_B_Task_1 {
 		}
 
 		int sunken = 0;
-		for (int h : ships) if (h == 0){
-			sunken++;
+		for (int h : ships){
+			if (h == 0){
+				sunken++;
+			}
 		}
 		return sunken;
 	}

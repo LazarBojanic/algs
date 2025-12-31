@@ -18,17 +18,16 @@ public class Test_2022_B_Task_3 {
 			right = Math.max(right, candy);
 		}
 		int result = right;
-
 		while (left <= right) {
 			int mid = left + (right - left) / 2;
 			if (canAchieve(jars, K, mid)) {
 				result = mid;
 				left = mid + 1;
-			} else {
+			}
+			else {
 				right = mid - 1;
 			}
 		}
-
 		int maxJar = Integer.MIN_VALUE;
 		for (int candy : jars) {
 			maxJar = Math.max(maxJar, candy);
@@ -39,7 +38,7 @@ public class Test_2022_B_Task_3 {
 	private boolean canAchieve(int[] jars, int K, int targetMin) {
 		int needed = 0;
 		for (int candy : jars) {
-			if (candy < targetMin){
+			if (candy < targetMin) {
 				needed += targetMin - candy;
 			}
 		}
@@ -47,7 +46,7 @@ public class Test_2022_B_Task_3 {
 	}
 
 	public void run() {
-		int[] jars = {4,7,5,3,6};
+		int[] jars = {4, 7, 5, 3, 6};
 		int K = 4;
 		System.out.println(minimizeDifference(jars, K));
 	}

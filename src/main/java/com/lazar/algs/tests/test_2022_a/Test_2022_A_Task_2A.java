@@ -19,7 +19,6 @@ public class Test_2022_A_Task_2A {
 		if (node == null) {
 			return 0;
 		}
-
 		if (node.left == null && node.right == null) {
 			return node.val;
 		}
@@ -27,7 +26,6 @@ public class Test_2022_A_Task_2A {
 		if (sumLeaves % 2 == 0) {
 			count++;
 		}
-
 		return sumLeaves;
 	}
 

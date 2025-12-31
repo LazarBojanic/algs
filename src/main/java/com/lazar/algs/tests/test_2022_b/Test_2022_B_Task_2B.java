@@ -8,7 +8,6 @@ public class Test_2022_B_Task_2B {
 	public int longestBeautiful(int[] arr, int T) {
 		int maxLen = 0;
 		int currentLen = 0;
-
 		for (int val : arr) {
 			if (val < T) {
 				currentLen++;
@@ -18,7 +17,6 @@ public class Test_2022_B_Task_2B {
 				currentLen = 0;
 			}
 		}
-
 		return maxLen;
 	}
 
