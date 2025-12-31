@@ -9,7 +9,9 @@ import java.util.List;
 
 public class Traversal {
 	public void dfsIterative(AlgTreeNode root) {
-		if (root == null) return;
+		if (root == null) {
+			return;
+		}
 		AlgArrayStack<AlgTreeNode> stack = new AlgArrayStack<>();
 		stack.push(root);
 		while (!stack.isEmpty()) {
@@ -23,6 +25,7 @@ public class Traversal {
 			}
 		}
 	}
+
 	public void dfsRecursive(AlgTreeNode root) {
 		if (root == null) {
 			return;
@@ -31,6 +34,7 @@ public class Traversal {
 		dfsRecursive(root.left);
 		dfsRecursive(root.right);
 	}
+
 	public void bfsIterative(AlgTreeNode root) {
 		if (root == null) {
 			return;
@@ -48,6 +52,7 @@ public class Traversal {
 			}
 		}
 	}
+
 	public void bfsRecursive(AlgTreeNode root) {
 		if (root == null) {
 			return;
@@ -73,7 +78,7 @@ public class Traversal {
 		bfsLevel(next);
 	}
 
-	public void run(){
+	public void run() {
 		Integer[] arr = new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9};
 		AlgTreeNode root = Util.createTree(arr);
 		dfsIterative(root);
