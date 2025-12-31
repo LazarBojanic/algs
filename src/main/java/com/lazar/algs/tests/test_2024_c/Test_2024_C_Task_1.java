@@ -17,17 +17,17 @@ public class Test_2024_C_Task_1 {
 					}
 					int lv = a[left];
 					int rv = a[right];
-					int cntL = 0;
+					int counterLeft = 0;
 					while (left < right && a[left] == lv) {
 						left++;
-						cntL++;
+						counterLeft++;
 					}
-					int cntr = 0;
+					int counterRight = 0;
 					while (left < right && a[right] == rv) {
 						right--;
-						cntr++;
+						counterRight++;
 					}
-					count += cntL * cntr;
+					count += counterLeft * counterRight;
 				}
 				else if (sum < 0) {
 					left++;
