@@ -5,6 +5,7 @@ import com.lazar.algs.common.linked_list.AlgListNode;
 import com.lazar.algs.common.queue.AlgLinkedListQueue;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Util {
@@ -86,5 +87,8 @@ public class Util {
 
 	public static void printTree(AlgTreeNode root) {
 		System.out.println(toLevelOrderList(root));
+	}
+	public static void printArray(int[] arr) {
+		System.out.println(Arrays.toString(arr));
 	}
 }
